@@ -1,0 +1,11 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+body{
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #F8EDED;
+}
+
