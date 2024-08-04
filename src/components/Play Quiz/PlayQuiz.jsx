@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getName, playQuiz } from "../Redux/Action";
 import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
-
+import { ToastContainer,toast } from "react-toastify";
 const QuizTitle = ({ title, id }) => {
   const selectedQuiz = useRef();
 
@@ -52,12 +52,12 @@ function PlayQuiz() {
   const getNameHandler = () => {
     // if there is no name entered then do nothing except an alert //
     if (name.current.value === "") {
-      alert("Please enter a name!");
+      toast.info("Please Enter your name first")
       return;
     }
     
     if(quiz.length <= 0) {
-      alert("Please Create a Quiz first.")
+      toast.error("Please! create a quiz first")
     }
     // if there exists a quiz choose the selected one and let us play that quiz with the name entered and route to the play page //
     else if (quiz.length > 0) {
@@ -74,6 +74,7 @@ function PlayQuiz() {
 
   return (
     <div className="mx-8 my-4">
+      <ToastContainer/>
       <div className="p-4">
         <h1 className="text-2xl text-[#]">Your active quizes are here! Select a quiz to play</h1>
 
