@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MyQuiz from "./components/My Quiz/MyQuiz";
 import PlayQuiz from "./components/Play Quiz/PlayQuiz";
 import CreateNew from "./components/CreateNew/CreateNew";
-
+import Quiz from "./components/Play Quiz/Quiz";
 function App() {
   return (
     <>
@@ -17,6 +17,7 @@ function App() {
           <Route path="/CreateNew" element={<CreateNew />} />
           <Route path="/MyQuiz" element={<MyQuiz />} />
           <Route path="/PlayQuiz" element={<PlayQuiz/>} />
+          <Route path="/Quiz" element={<Quiz/>} />
         </Routes>
       </Router>
     </>

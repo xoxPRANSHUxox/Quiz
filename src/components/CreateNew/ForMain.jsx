@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addQuiz } from "../Redux/Action";
 
+
 export default function ForMain() {
   const [count, setCount] = useState(1);
 
@@ -121,6 +122,7 @@ export default function ForMain() {
       createdOn: new Date(),
       isActive: true,
     };
+
     dispatch(addQuiz(Quiz));
 
     setCount(1);
@@ -157,7 +159,7 @@ export default function ForMain() {
 
             <input
               type="text"
-              className="description-input border-[0.2rem] p-4 rounded-lg border-[#B43F3F] mx-12 my-4"
+              className="border-[0.2rem] p-4 rounded-lg border-[#B43F3F] mx-12 my-4"
               placeholder="Add Description"
               ref={descriptionRef}
             />
@@ -196,19 +198,22 @@ export default function ForMain() {
             <label htmlFor="correct"> Correct</label>
           </div>
 
-          <button className="add-option border-sky-700 border-solid border h-8  bg-red-500" onClick={addOptionHandler}>
+          <button className="add-option border-white rounded-lg w-[30vw] h-[2.5rem] border-solid border  bg-[#ff8225] m-auto" onClick={addOptionHandler}>
               Add Options
             </button>
 
-          <div className="my-4">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-[10rem] text-center" onClick={addQuestionHandler}>
+          <div className="my-4 flex">
+            <button className="text-md font-bold text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] px-8 py-4 flex focus:ring-4 focus:ring-gray-100" onClick={addQuestionHandler}>
               Add question
             </button>
-          </div>
 
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-[10rem] text-center " onClick={onSaveHandler}>
+            <button className="text-md font-bold text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] px-8 py-4 flex focus:ring-4 focus:ring-gray-100 mx-8" onClick={onSaveHandler}>
               Save quiz 
             </button>
+
+          </div>
+
+          
         </form>
         
       </div>

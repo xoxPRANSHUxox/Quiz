@@ -15,9 +15,9 @@ export default function CreateNew() {
 }
 function CreateNewModel({ handleModel }) {
   return (
-    <div className='flex w-screen h-screen justify-center items-center'>
+    <div className='flex w-screen h-[50vh] justify-center items-center'>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="text-lg font-bold py-4 text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] px-4 flex focus:ring-4 focus:ring-gray-100"
         onClick={handleModel}
       >
         MCQ BASED QUESTIONS
@@ -27,10 +27,3 @@ function CreateNewModel({ handleModel }) {
 };
 
   
-
-
-
-//   return (
-    
-//   );
-// };

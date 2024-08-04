@@ -6,13 +6,13 @@ const AnswerCard = ({ id, answer, correct, getAnswerHandler, selectedId }) => {
   };
   return (
     <div
-      className="quiz-option-container"
+      className="border mx-8 my-4 p-2 rounded-xl px-8 text-wrap w-auto h-auto"
       onClick={onclickHandler}
-      style={{ background: `${selectedId === id ? "green" : ""}` }}
+      style={{ background: `${selectedId === id ? "#FF8225" : ""}`}}
     >
       <span
-        className="answer-click"
-        style={{ background: `${selectedId === id ? "blue" : ""}` }}
+        className=""
+        style={{ background: `${selectedId === id ? "#FF8225" : ""}` }}
       ></span>
       <p>{answer}</p>
     </div>
@@ -29,10 +29,10 @@ const QuizCard = ({
   count,
 }) => {
   return (
-    <div className="play-quiz-questions">
-      <div className="quiz-question" style={{ fontWeight: "600" }}>
-        <div style={{ fontSize: "14px" }}>Please select only One Answer!</div>
-        {count + 1}. {question}
+    <div className="">
+      <div className="text-wrap">
+        <div className="text-sm font-semibold my-2 underline underline-offset-4" >Please select only One Answer! Your Question is mentioned below</div>
+        <p className="font-bold mt-8 mx-2 text-wrap h-auto w-auto"> {count + 1}. {question} </p>
       </div>
 
       <div className="quiz-options">
@@ -48,13 +48,13 @@ const QuizCard = ({
         ))}
       </div>
 
-      <div className="quiz-next-btn">
-        <div className="quiz-question-no">
+      <div className="flex justify-center items-center m-auto">
+        <div className="">
           Question {count + 1} / {length}
         </div>
 
         <div className="next-question">
-          <button onClick={nextQuestionHandler}>Next Question</button>
+          <button className="text-[1rem] my-12 font-bold text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] p-4" onClick={nextQuestionHandler}>Next Question</button>
         </div>
       </div>
     </div>

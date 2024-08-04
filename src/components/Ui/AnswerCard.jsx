@@ -1,4 +1,7 @@
 import React from "react";
+import CheckIcon from '@mui/icons-material/Check';
+import ClearIcon from '@mui/icons-material/Clear';
+
 export default function AnswerCard({ text, id, correct, onDeleteHaadnler }) {
   return (
     <div className="w-full">
@@ -17,11 +20,11 @@ export default function AnswerCard({ text, id, correct, onDeleteHaadnler }) {
           <div>
             {correct ? (
               <p className="text-center">
-                <i className="fa-solid fa-circle-check"></i>
+                <CheckIcon/>
               </p>
             ) : (
               <p className="text-center">
-                <i className="fa-solid fa-circle-xmark"></i>
+                <ClearIcon/>
               </p>
             )}
           </div>
