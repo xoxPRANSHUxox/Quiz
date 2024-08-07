@@ -17,7 +17,7 @@ function CreateNewModel({ handleModel }) {
   return (
     <div className='flex w-screen h-[50vh] justify-center items-center'>
       <button
-        className="text-lg font-bold py-4 text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] px-4 flex focus:ring-4 focus:ring-gray-100"
+        className="new-morphism text-lg font-bold py-4 text-[#B43F3F] rounded-full border border-[#f9f9f9] hover:text-[#173B45] px-4 flex"
         onClick={handleModel}
       >
         MCQ BASED QUESTIONS
