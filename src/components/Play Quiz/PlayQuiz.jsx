@@ -73,7 +73,7 @@ function PlayQuiz() {
   );
 
   return (
-    <div className="mx-8 my-4">
+    <div className="mx-8 my-4 ">
       <ToastContainer/>
       <div className="p-4">
         <h1 className="text-2xl text-[#]">Your active quizes are here! Select a quiz to play</h1>
@@ -91,11 +91,11 @@ function PlayQuiz() {
       </div>
 
 
-      <div className="bg-[#FF8225] p-4 rounded-lg text-[#0c2228] text-xl flex text-wrap bg-[]">
+      <div className="fade-in-HalfSec bg-[#FF8225] p-4 rounded-lg text-[#0c2228] text-xl flex text-wrap bg-[]">
            Welcome in Almabetter Quiz Website.Here are some quizes for you. We know that you are here for a brain twister.Let's play.
       </div>
        
-      <div className="my-8 text-[#0c2228] text-xl flex text-wrap">
+      <div className="my-8 text-[#0c2228] text-xl flex text-wrap fade-in-1">
          Instructions :- 
          <ul className="px-4 my-12 list-disc">
           <li>First Select a quiz from above given quiz.</li>

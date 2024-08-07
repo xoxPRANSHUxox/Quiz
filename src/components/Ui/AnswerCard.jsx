@@ -5,10 +5,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function AnswerCard({ text, id, correct, onDeleteHandler }) { // Corrected prop name
   return (
-    <div className="w-full">
-      <div className="w-fit p-4 bg-white border-[#B43F3F] border-[0.2rem] rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 m-4">
-        <div className="flex">
-          <p className="mx-4 font-sans">{text}</p>
+    <div className="mx-2 flex flex-wrap">
+      <div className="w-full p-4 bg-white border-[#B43F3F] border-[0.2rem] rounded-lg shadow m-4">
+        <div className="flex h-auto w-auto">
+          <p className="mx-4 font-sans text-wrap">{text}</p>
           <button onClick={() => onDeleteHandler(id)}>
             <DeleteIcon />
           </button>

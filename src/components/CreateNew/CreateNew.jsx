@@ -15,7 +15,7 @@ export default function CreateNew() {
 }
 function CreateNewModel({ handleModel }) {
   return (
-    <div className='flex w-screen h-[50vh] justify-center items-center'>
+    <div className='flex w-screen h-[50vh] justify-center items-center fade-in-HalfSec'>
       <button
         className="new-morphism text-lg font-bold py-4 text-[#B43F3F] rounded-full border border-[#f9f9f9] hover:text-[#173B45] px-4 flex"
         onClick={handleModel}

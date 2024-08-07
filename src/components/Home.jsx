@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="h-[90vh] w-[100vw]">
-      <section className="flex justify-center items-center h-[90vh] w-[100vw] flex-wrap">
+      <section className="flex justify-center items-center h-[90vh] w-[100vw] flex-wrap fade-in-HalfSec">
 
         <Link to="/CreateNew">
           <div className="flex justify-center items-center rounded-md w-5/6 max-w-[25rem]  z-0 box-border container m-4">

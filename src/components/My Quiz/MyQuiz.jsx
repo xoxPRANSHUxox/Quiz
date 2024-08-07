@@ -13,7 +13,7 @@ const Deletemodel = ({ closeModel, id }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex ites-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="fixed inset-0 flex ites-center justify-center bg-black bg-opacity-50 z-50 fade-in-HalfSec">
       <div className="bg-white rounded-lg p-6 shadow-lg max-w-sm mt-[10rem] h-fit">
         <h2 className="text-lg font-bold mb-4">Do you want to delete this quiz?</h2>
         <p className="mb-6">Deleting this will result in losing the file permanently and is not recoverable.</p>
@@ -51,7 +51,7 @@ function MyQuiz() {
   };
 
   return (
-    <div className="w-screen">  
+    <div className="w-screen fade-in-HalfSec">  
       <div className="w-full flex">
         <div className="w-auto flex flex-wrap font-bold text-[#B43F3F] text-md text-wrap my-8">
           <h1 className="text-3xl mx-12">My Quizzes</h1>

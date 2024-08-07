@@ -31,3 +31,30 @@ body{
 .glass{
     backdrop-filter: blur(10px);
 }
+
+.fade-in-HalfSec {
+    animation: fadeInHalfSec 0.5s ease-in-out forwards;
+  }
+
+@keyframes fadeInHalfSec {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in-1 {
+    animation: fadeIn1 1s ease-in-out forwards;
+  }
+
+@keyframes fadeIn1 {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+ 

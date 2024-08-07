@@ -134,32 +134,33 @@ export default function ForMain() {
   return (
     <div>
       <ToastContainer />
-      <div className="form">
-        <form className="w-auto flex flex-col border-[0.2rem] m-[5rem] border-[#B43F3F] rounded-2xl ">
-          <div className="w-full flex flex-col">
+      <div className="form fade-in-1">
+        <form className="w-auto flex flex-col border-[0.2rem] mx-[1rem]  border-[#B43F3F] rounded-2xl sm:mx-[5rem]">
+          <div className="w-full flex flex-col ">
             <input
               type="text"
               placeholder="Add Title"
               name="title"
-              className=" title-input border-[0.2rem] p-4 rounded-lg mx-12 my-4 border-[#B43F3F] overflow-hidden"
+              className=" title-input border-[0.2rem] p-4 rounded-lg mx-4 my-4 border-[#B43F3F] overflow-hidden sm:mx-12"
               ref={titleRef}
             />
             <input
               type="text"
-              className="border-[0.2rem] p-4 rounded-lg border-[#B43F3F] mx-12 my-4"
+              className="border-[0.2rem] p-4 rounded-lg border-[#B43F3F] sm:mx-12 mx-4 my-4"
               placeholder="Add Description"
               ref={descriptionRef}
             />
           </div>
-          <div className="font-medium w-full flex flex-wrap">
+          <div className=" w-full flex flex-wrap">
             <input
               type="text"
-              className=" w-3/4 mx-12 title-input border-[0.2rem] p-4 rounded-lg my-4 border-[#B43F3F]"
+              className=" w-screen overflow-hidden sm:w-3/4 sm:mx-12 mx-4 title-input border-[0.2rem] p-4 rounded-lg my-4 border-[#B43F3F]"
               ref={questionRef}
             />
             <span className="text-center m-auto mb-4">Question {count}</span>
           </div>
-          <div className="form-submit-answer flex flex-row">
+          <div className="flex sm:flex-row flex-col">
+            
             {answers.map((el, i) => (
               <AnswerCard
                 text={el.answer}
@@ -169,8 +170,9 @@ export default function ForMain() {
                 onDeleteHandler={onDeleteHandler}
               />
             ))}
+
           </div>
-          <div className="">
+          <div className="flex flex-wrap">
             <input
               type="text"
               className="answer w-auto border-[0.2rem] p-2  rounded-lg"
@@ -188,15 +190,15 @@ export default function ForMain() {
           >
             Add Options
           </button>
-          <div className="my-4 flex">
+          <div className="my-4 flex flex-wrap">
             <button
-              className="text-md font-bold text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] px-8 py-4 flex focus:ring-4 focus:ring-gray-100"
+              className=" text:sm sm:text-md font-bold text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45]  px-4 sm:px-8 py-4 flex focus:ring-4 focus:ring-gray-100"
               onClick={addQuestionHandler}
             >
               Add question
             </button>
             <button
-              className="text-md font-bold text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] px-8 py-4 flex focus:ring-4 focus:ring-gray-100 mx-8"
+              className=" text-sm sm:text-md font-bold text-[#B43F3F] bg-white rounded-full border border-[#F8EDED] hover:bg-[#FF8225] hover:text-[#173B45] px-4 sm:px-8 py-4 flex focus:ring-4 focus:ring-gray-100 mx-8 "
               onClick={onSaveHandler}
             >
               Save quiz 
