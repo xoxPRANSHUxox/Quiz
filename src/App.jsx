@@ -9,6 +9,7 @@ import Quiz from "./components/Play Quiz/Quiz";
 function App() {
   return (
     <>
+      {/* This is a app js page. Here, all the routes are defined here.  */}
       <Router>
         <Navbar />
         <Routes>
