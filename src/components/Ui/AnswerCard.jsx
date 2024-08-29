@@ -10,8 +10,8 @@ export default function AnswerCard({ text, id, correct, onDeleteHandler }) {
         {/* Container for the answer text and delete button */}
         <div className="flex h-auto w-auto">
           <p className="mx-4 font-sans text-wrap">{text}</p> {/* Display the answer text */}
-          <button onClick={() => onDeleteHandler(id)}> {/* Trigger delete handler */}
-            <DeleteIcon /> {/* Delete icon */}
+          <button type="button" onClick={() => onDeleteHandler(id)}> {/* Trigger delete handler */}
+            <DeleteIcon/> {/* Delete icon */}
           </button>
         </div>
         {/* Background color changes based on whether the answer is correct */}

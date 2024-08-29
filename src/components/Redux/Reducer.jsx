@@ -1,19 +1,20 @@
 import { TYPE } from "./Action";
 
-//  this is our initital state of the app //
+// Initial state of the app
 const initialState = {
-  quiz: [],
+  quiz: JSON.parse(localStorage.getItem('quiz')) || [], // Load from localStorage if available
   name: "",
   playQuiz: [],
   answers: [],
 };
 
-// the reducer containes all the necessary functions in order to update our state accordingly //
-
+// Reducer containing all necessary functions to update the state
 export const reducer = (state = initialState, actions) => {
   
   if (actions.type === TYPE.ADDQUIZ) {
-    return { ...state, quiz: [...state.quiz, actions.payload] };
+    const updatedQuiz = [...state.quiz, actions.payload];
+    localStorage.setItem('quiz', JSON.stringify(updatedQuiz)); // Store updated quiz in localStorage
+    return { ...state, quiz: updatedQuiz };
   }
 
   if (actions.type === TYPE.TOGGLEACTIVE) {
@@ -27,7 +28,8 @@ export const reducer = (state = initialState, actions) => {
       { ...findElem, isActive: !findElem.isActive },
       ...filteredArr,
     ];
-  
+    
+    localStorage.setItem('quiz', JSON.stringify(newArr)); // Store updated quiz in localStorage
     return {
       ...state,
       quiz: newArr,
@@ -37,6 +39,7 @@ export const reducer = (state = initialState, actions) => {
   if (actions.type === TYPE.DELETEQUIZ) {
     const filteredArr = state.quiz.filter((el) => el.id !== actions.payload);
 
+    localStorage.setItem('quiz', JSON.stringify(filteredArr)); // Store updated quiz in localStorage
     return {
       ...state,
       quiz: filteredArr,
@@ -60,7 +63,6 @@ export const reducer = (state = initialState, actions) => {
   }
 
   if (actions.type === TYPE.GETANSWER) {
-    console.log(actions.payload);
     return {
       ...state,
       answers: [...state.answers, actions.payload],

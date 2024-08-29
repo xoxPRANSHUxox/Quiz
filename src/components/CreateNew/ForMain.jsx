@@ -74,14 +74,20 @@ export default function ForMain() {
   // Handler to add a new question to the quiz
   const addQuestionHandler = (e) => {
     e.preventDefault();
-    
+  
     // Validation to ensure the question and answers are not empty
     if (questionRef.current.value === "" || answers.length === 0) {
       toast.error("Question or answers cannot be empty");
-      questionRef.current.value = "";
       return;
     }
-
+  
+    // Check if there's at least one correct answer
+    const hasCorrectAnswer = answers.some((answer) => answer.correct);
+    if (!hasCorrectAnswer) {
+      toast.error("You must mark at least one answer as correct");
+      return;
+    }
+  
     // Ensure at least 3 answers are provided before adding the question
     if (answers.length > 2) {
       const Question = {
@@ -89,7 +95,7 @@ export default function ForMain() {
         answers: answers, // List of answers for this question
         id: count, // Unique ID for the question
       };
-
+  
       setCount((prev) => prev + 1); // Increment the question count
       setQuestion((prev) => [...prev, Question]); // Add the question to the quiz
       setAnswers([]); // Reset answers array for the next question
@@ -101,7 +107,7 @@ export default function ForMain() {
       setAnswerLength(true); // Trigger answer length validation feedback
     }
   };
-
+  
   // Handler to delete an answer option from the list
   const onDeleteHandler = (id) => {
     const filteredArr = answers.filter((el) => el.id !== id); // Remove the selected answer
@@ -117,7 +123,7 @@ export default function ForMain() {
 
     // Validation to ensure title and questions are not empty
     if (titleValue === "" || question.length <= 0) {
-      toast.error("Title or questions are missing");
+      toast.error("Title or questions are missing or You have to add question");
       return;
     }
 
